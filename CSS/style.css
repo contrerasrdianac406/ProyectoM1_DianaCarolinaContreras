@@ -56,7 +56,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
-    background-color: blueviolet;
+    background-color: rgb(236, 240, 226);
     width: 60%;
     height: 70%;
     justify-items: center;
@@ -68,7 +68,7 @@ main {
 }
 
 #tarjeta {
-    background-color: hsl(0, 23%, 64%);
+    /* background-color: hsl(0, 23%, 64%); */
     border-radius: 10px;
     box-shadow: 0 0 10px;
     overflow: hidden;
@@ -90,6 +90,25 @@ Componentes
     background-color: #4B3621;
 }
 
+.card2 {
+    background-color: #2F2F2F;
+}
+
+.card3 {
+    background-color: #CD853F;
+}
+
+.card4 {
+    background-color: #62624E;
+}
+
+.card5 {
+    background-color: #D2B48C;
+}
+
+.card6 {
+    background-color: #D2B48C;
+}
 
 .contenedor-botones {
     margin-top: 10px;
