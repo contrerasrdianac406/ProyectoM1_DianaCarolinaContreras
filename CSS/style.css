@@ -14,7 +14,8 @@ html {
 body {
     margin: 0;
     line-height: 1.6;
-    background-color: yellow;
+    /* background-color: rgb(226, 226, 216);
+ */
 }
 
 /* ===============================================================================
@@ -31,13 +32,13 @@ layout
 
 
 header {
-    background-color: hsl(63, 56%, 66%);
+    background-color: #F0F8FF;
 }
 
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.0rem;
-    color: hsl(40, 90%, 56%);
+    color: hsl(226, 50%, 39%);
     text-align: center;
 
 }
@@ -48,7 +49,7 @@ main {
     padding: 1rem 5rem;
     display: flex;
     justify-content: center;
-    background-color: aquamarine;
+    background-color: #F0F8FF;
 
 }
 
@@ -56,12 +57,11 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
-    background-color: rgb(236, 240, 226);
     width: 60%;
     height: 70%;
     justify-items: center;
     place-items: center;
-    padding-bottom: 10rem;
+    padding-bottom: 1rem;
     padding-top: 1rem;
 
 
@@ -70,7 +70,6 @@ main {
 #tarjeta {
     /* background-color: hsl(0, 23%, 64%); */
     border-radius: 10px;
-    box-shadow: 0 0 10px;
     overflow: hidden;
     transition: 1s;
     width: 90%;
@@ -87,27 +86,39 @@ Componentes
 ================================================================================== */
 
 .card1 {
-    background-color: #4B3621;
+    background-color: #B0C4DE;
 }
 
 .card2 {
-    background-color: #2F2F2F;
+    background-color: #ADD8E6;
 }
 
 .card3 {
-    background-color: #CD853F;
+    background-color: #DCDCDC;
 }
 
 .card4 {
-    background-color: #62624E;
+    background-color: #BDB76B;
 }
 
 .card5 {
-    background-color: #D2B48C;
+    background-color: #FFFACD;
 }
 
 .card6 {
-    background-color: #D2B48C;
+    background-color: #8FBC8F;
+}
+
+.card7 {
+    background-color: #A2AD91;
+}
+
+.card8 {
+    background-color: #E9DCC9;
+}
+
+.card9 {
+    background-color: #2D4C3E;
 }
 
 .contenedor-botones {
