@@ -1,23 +1,24 @@
 const btnAgregarCard = document.querySelector("#agregar-card");
 const contenedorColores = document.querySelector("#articulo");
+const selectOpciones = document.querySelector("#opciones");
 
-contador = 7;
+let i = 1;
+function agregarPlantila() {
+  const nuevomarco = document.createElement("div");
+  nuevomarco.id = "marco-tarjeta";
 
-function agregarCard() {
-  if (contador < 10) {
-    const nuevomarco = document.createElement("div");
-    nuevomarco.setAttribute("id", "marco-tarjeta");
-    contenedorColores.appendChild(nuevomarco);
-    const nuevocard = document.createElement("div");
-    nuevocard.setAttribute("id", "tarjeta");
-    nuevocard.classList.add("card" + contador);
-    nuevomarco.appendChild(nuevocard);
-    contador++;
-  } else {
-    alert("Ya no puedes crear mas colores");
-  }
+  const nuevocard = document.createElement("div");
+  nuevocard.id = "tarjeta";
+  nuevocard.classList.add("card" + i);
+
+  const label = document.createElement("p");
+  label.textContent = "Color";
+
+  nuevomarco.appendChild(nuevocard);
+  nuevomarco.appendChild(label);
+  contenedorColores.appendChild(nuevomarco);
+  i++;
 }
-btnAgregarCard.addEventListener("click", agregarCard);
 
 function generarHexadecimal() {
   const caracteresHexadecimales = "0123456789ABCDEF";
@@ -27,3 +28,17 @@ function generarHexadecimal() {
   }
   return hexadecimal;
 }
+
+function GenerarPaleta() {
+  let contador = 0;
+  contenedorColores.innerHTML = "";
+  do {
+    agregarPlantila();
+    contador++;
+  } while (contador < parseInt(selectOpciones.value));
+  console.log(selectOpciones.value);
+  console.log(parseInt(selectOpciones.value) + 2);
+  i = 1;
+}
+GenerarPaleta();
+selectOpciones.addEventListener("change", GenerarPaleta);
