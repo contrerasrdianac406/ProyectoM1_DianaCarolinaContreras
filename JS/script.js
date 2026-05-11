@@ -20,15 +20,6 @@ function agregarPlantila() {
   i++;
 }
 
-function generarHexadecimal() {
-  const caracteresHexadecimales = "0123456789ABCDEF";
-  let hexadecimal = "#";
-  for (let i = 0; i < 6; i++) {
-    hexadecimal += caracteresHexadecimales[Math.floor(Math.random() * 16)];
-  }
-  return hexadecimal;
-}
-
 function GenerarPaleta() {
   let contador = 0;
   contenedorColores.innerHTML = "";
@@ -36,8 +27,6 @@ function GenerarPaleta() {
     agregarPlantila();
     contador++;
   } while (contador < parseInt(selectOpciones.value));
-  console.log(selectOpciones.value);
-  console.log(parseInt(selectOpciones.value) + 2);
   i = 1;
 }
 GenerarPaleta();
