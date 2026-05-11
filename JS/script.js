@@ -1,6 +1,7 @@
 const btnAgregarCard = document.querySelector("#agregar-card");
 const contenedorColores = document.querySelector("#articulo");
 const selectOpciones = document.querySelector("#opciones");
+const btnGenerarPaleta = document.querySelector("#generar-paleta");
 
 let i = 1;
 function agregarPlantila() {
@@ -11,8 +12,11 @@ function agregarPlantila() {
   nuevocard.id = "tarjeta";
   nuevocard.classList.add("card" + i);
 
+  const color = generarHexadecimal();
+  nuevocard.style.backgroundColor = color;
+
   const label = document.createElement("p");
-  label.textContent = "Color";
+  label.textContent = color;
 
   nuevomarco.appendChild(nuevocard);
   nuevomarco.appendChild(label);
@@ -31,3 +35,16 @@ function GenerarPaleta() {
 }
 GenerarPaleta();
 selectOpciones.addEventListener("change", GenerarPaleta);
+
+function generarHexadecimal() {
+  const caracteresHexadecimales = "0123456789ABCDEF";
+  let hexadecimal = "#";
+  for (let i = 0; i < 6; i++) {
+    hexadecimal += caracteresHexadecimales[Math.floor(Math.random() * 16)];
+  }
+  return hexadecimal;
+}
+
+console.log(generarHexadecimal());
+
+btnGenerarPaleta.addEventListener("click", GenerarPaleta);
