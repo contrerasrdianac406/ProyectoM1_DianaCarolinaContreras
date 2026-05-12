@@ -16,6 +16,7 @@ function agregarPlantila() {
   nuevocard.style.backgroundColor = color;
 
   const label = document.createElement("p");
+  label.classList.add("label-color");
   label.textContent = color;
 
   nuevomarco.appendChild(nuevocard);
@@ -44,7 +45,4 @@ function generarHexadecimal() {
   }
   return hexadecimal;
 }
-
-console.log(generarHexadecimal());
-
 btnGenerarPaleta.addEventListener("click", GenerarPaleta);
