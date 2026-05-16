@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    line-height: 1.6;
+    line-height: 1.0;
 }
 
 /* ===============================================================================
@@ -23,55 +23,58 @@ Variables y utilidades
 Tipografía
 ================================================================================== */
 .label-color {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Concert One", sans-serif;
     font-size: 1rem;
-    color: #302d2d;
-    margin-top: 1rem;
+    color: #3c3a3a;
+    margin-top: 0.5rem;
+    font-weight: 350;
+    font-style: normal;
 }
 
 /* ===============================================================================
 layout
 ================================================================================== */
-
-
 header {
     background-color: #5fa1c2;
     text-align: center;
-
+    padding: 0.5rem;
 }
 
 h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2.5rem;
-    color: hsl(228, 26%, 96%);
+    font-family: "Concert One", sans-serif;
+    font-size: 2.0rem;
+    color: hsl(227, 47%, 96%);
     text-align: center;
-    font-weight: 800;
-    letter-spacing: -0.05em;
-
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+    text-shadow: 3px 2px 8px rgba(209, 219, 159, 0.56);
 }
 
 main {
-    padding: 2rem 5rem;
+    padding: 1rem;
     display: flex;
-    min-height: 620px;
+    height: 40px;
     justify-content: center;
     background: linear-gradient(135deg, #dfe9ee 0%, #e8f0f5 50%, #d5e3eb 100%);
     position: relative;
     overflow: hidden;
+    gap: 0.5rem;
 }
 
 
 .contenedor-colores {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-    width: 90%;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    width: 60%;
+    height: 40%;
     align-items: center;
     justify-items: center;
     position: relative;
     z-index: 1;
     animation: fadeInGrid 0.6s ease-out;
+    margin-top: 1.3rem;
 }
 
 
@@ -81,8 +84,8 @@ main {
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    width: 100%;
-    height: 220px;
+    width: 80%;
+    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -122,7 +125,7 @@ main {
 #marco-tarjeta:hover .label-color {
     transform: translateY(-2px);
     color: #080909;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 
@@ -132,13 +135,12 @@ Componentes
 
 
 .contenedor-botones {
-    margin: 1rem;
+    margin: 0.5rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding: 1rem;
-    gap: 1rem;
-    flex-wrap: wrap;
+    padding: 0.5rem;
+    gap: 0.5rem;
     align-items: center;
 }
 
@@ -146,8 +148,8 @@ Componentes
     background: linear-gradient(135deg, #5fa1c2, #3d7a9e);
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.5rem;
+    font-weight: 0.5rem;
     padding: 0.75rem 2rem;
     border: none;
     border-radius: 25px;
@@ -169,38 +171,188 @@ Componentes
     box-shadow: 0 4px 10px rgba(95, 161, 194, 0.3);
 }
 
-.footer-pagina {
-    text-align: center;
-    padding: 0.5rem;
-    background: linear-gradient(135deg, #5fa1c2, #4a8aad);
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    box-shadow: 0 -4px 15px rgba(95, 161, 194, 0.2);
-    border-top: 3px solid #3d7a9e;
-    margin-top: 2rem;
-}
-
 /* ===============================================================================
 Media querys
 ================================================================================== */
+
+/* Estilos base (móvil pequeño) - 320px a 480px */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: -0.02em;
+    }
+
+    main {
+        padding: 1rem;
+        height: 350px;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        width: 95%;
+    }
+
+    #marco-tarjeta {
+        height: 180px;
+    }
+
+    .contenedor-botones {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .boton-generar-paleta {
+        width: 100%;
+        padding: 0.65rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    select,
+    input[type="radio"],
+    label {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+
+    .label-color {
+        font-size: 0.75rem;
+    }
+}
+
+/* Móvil estándar - 481px a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1.5rem 2rem;
+        height: auto;
+        min-height: 450px;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        width: 90%;
+    }
+
+    #marco-tarjeta {
+        height: 200px;
+    }
+
+    .contenedor-botones {
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .boton-generar-paleta {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.95rem;
+    }
+
+    .label-color {
+        font-size: 0.85rem;
+    }
+}
+
+/* Tableta pequeña a mediana - 769px a 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        padding: 2rem 3rem;
+        min-height: 550px;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.75rem;
+        width: 90%;
+    }
+
+    #marco-tarjeta {
+        height: 210px;
+    }
+
+    .contenedor-botones {
+        gap: 1.2rem;
+    }
+
+    .boton-generar-paleta {
+        padding: 0.75rem 2rem;
+    }
+
+    .label-color {
+        font-size: 0.9rem;
+    }
+}
+
+/* Pantalla grande - 1025px a 1440px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    main {
+        padding: 2rem 4rem;
+        height: auto;
+        min-height: 580px;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 2rem;
+        width: 85%;
+        max-width: 1100px;
+    }
+
+    #marco-tarjeta {
+        height: 220px;
+    }
+
+    .contenedor-botones {
+        gap: 1.5rem;
+    }
+
+    .label-color {
+        font-size: 1rem;
+    }
+}
+
+/* Pantalla extra grande - 1441px+ */
+@media (min-width: 1441px) {
+    main {
+        padding: 2rem 5rem;
+        min-height: 620px;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2.5rem;
+        width: 90%;
+        max-width: 1300px;
+    }
+
+    #marco-tarjeta {
+        height: 240px;
+    }
+
+    .boton-generar-paleta {
+        padding: 0.85rem 2.5rem;
+        font-size: 1.05rem;
+    }
+
+    .label-color {
+        font-size: 1.1rem;
+    }
+}
+
 /* Estilos base (móvil) */
 .contenedor-principal {
     padding: 0.5rem;
-}
-
-/* Pantallas medianas y más grandes */
-@media (min-width: 768px) {
-    .contenedor-principal {
-        padding: 1.5rem;
-    }
-}
-
-/* Pantallas grandes */
-@media (min-width: 1024px) {
-    .contenedor-principal {
-        padding: 3rem;
-    }
 }
