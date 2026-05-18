@@ -5,7 +5,6 @@ Reset y configuración base
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--background-pagina);
 }
 
 html {
@@ -19,7 +18,7 @@ Variables y utilidades
 ================================================================================== */
 
 :root {
-    --background-pagina: linear-gradient(135deg, #dfe9ee 0%, #e8f0f5 50%, #d5e3eb 100%);
+    --background-pagina: #E0F2FE;
 }
 
 /* ===============================================================================
@@ -34,18 +33,15 @@ Tipografía
     font-style: normal;
 }
 
-label {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-}
 
 /* ===============================================================================
 layout
 ================================================================================== */
 body {
     line-height: 1.0;
-    background: linear-gradient(135deg, #dfe9ee 0%, #e8f0f5 50%, #d5e3eb 100%);
+    background: var(--background-pagina);
+
+
 }
 
 header {
@@ -178,15 +174,12 @@ main {
     font-weight: 400;
 }
 
-legend {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 570;
-    color: #1d1a1a;
-}
 
 /* footer */
 
+footer {
+    background-color: var(--background-pagina);
+}
 
 #mensaje-alerta {
     opacity: 0;
@@ -195,6 +188,7 @@ legend {
     font-size: 1.2rem;
     color: rgb(6, 68, 113);
     font-weight: 700;
+    margin-top: 1.5rem;
 }
 
 #mensaje-alerta.mostrar {
@@ -214,7 +208,7 @@ Componentes
     justify-content: center;
     flex-direction: row;
     padding: 0.5rem;
-    gap: 0.5rem;
+    gap: 2.2rem;
     align-items: center;
 }
 
@@ -243,6 +237,41 @@ Componentes
 .boton-generar-paleta:active {
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(95, 161, 194, 0.3);
+}
+
+.contenedor-opciones {
+    display: flex;
+    gap: 0.5rem;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#opciones {
+    width: 150px;
+    /* Puedes usar px, rem o porcentaje (ej. 100%) */
+    padding: 6px 6px;
+    /* Añade espacio interno para que se vea más estilizado */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'roboto', sans-serif;
+    font-size: 1.1rem;
+}
+
+#opciones option {
+    font-family: 'roboto', sans-serif;
+    font-size: 1.1rem;
+    background: #d5ecf7;
+}
+
+.formato-color {
+    display: flex;
+    gap: 0.6rem;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
 }
 
 /* ===============================================================================

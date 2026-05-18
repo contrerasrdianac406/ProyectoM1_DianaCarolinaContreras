@@ -52,29 +52,45 @@
     </main>
     <!-- Botones -->
     <section id="articulo-botones" class="contenedor-botones">
-      <button id="generar-paleta" class="boton-generar-paleta">
-        Generar paleta
-      </button>
-      <label for="opciones">Elige una opción:</label>
-      <select name="opciones" id="opciones">
+      
+      
+
+      <div class="contenedor-opciones">
+        <label for="opciones">Elige una opción:</label>
+        <select name="opciones" id="opciones">
         <option value="6">6 colores</option>
         <option value="8">8 colores</option>
         <option value="9">9 colores</option>
-      </select>
+        </select>
+      </div>
 
-      <legend>Formato color</legend>
-      <input
-        type="radio"
-        id="hexadecimal"
-        name="color-codigo"
-        value="HEX"
-        required
-        checked
-      />
-      <label for="hexadecimal">HEX</label><br />
+      <div class="contenedor-btngenerar-paleta">
+        <button id="generar-paleta" class="boton-generar-paleta">
+        Generar paleta
+        </button>
+      </div>
 
-      <input type="radio" id="hsl" name="color-codigo" value="HSL" />
-      <label for="hsl">HSL</label><br />
+      <div class="formato-color">
+        <legend>Formato color</legend>
+        <input
+          type="radio"
+          id="hexadecimal"
+          name="color-codigo"
+          value="HEX"
+          required
+          checked
+        />
+        <label for="hexadecimal">HEX</label><br />
+
+        <input type="radio" 
+        id="hsl"
+        name="color-codigo" 
+        value="HSL" />
+        <label for="hsl">HSL</label><br />
+
+      </div>
+      
+     
     </section>
 
     <footer>
