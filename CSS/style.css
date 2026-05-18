@@ -101,26 +101,28 @@ h1:hover {
 main {
     padding: 1rem;
     display: flex;
-    height: 100%;
+    min-height: 60vh;
     justify-content: center;
     position: relative;
     overflow: hidden;
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 
 .contenedor-colores {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.5rem;
-    width: 60%;
-    height: 40%;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
     align-items: center;
     justify-items: center;
     position: relative;
     z-index: 1;
     animation: fadeInGrid 0.6s ease-out;
     margin-top: 1.3rem;
+    padding: 0 1rem;
 }
 
 
@@ -203,13 +205,15 @@ Componentes
 
 
 .contenedor-botones {
-    margin: 0.5rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding: 0.5rem;
-    gap: 2.2rem;
+    padding: 1rem 0.5rem;
+    gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .boton-generar-paleta {
@@ -244,25 +248,33 @@ Componentes
     gap: 0.5rem;
     font-family: 'roboto', sans-serif;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 1rem;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #opciones {
-    width: 150px;
-    /* Puedes usar px, rem o porcentaje (ej. 100%) */
-    padding: 6px 6px;
-    /* Añade espacio interno para que se vea más estilizado */
+    min-width: 120px;
+    width: auto;
+    max-width: 150px;
+    padding: 0.5rem 0.75rem;
     border-radius: 6px;
     border: 1px solid #ccc;
     font-family: 'roboto', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#opciones:hover {
+    border-color: #5fa1c2;
+    box-shadow: 0 2px 8px rgba(95, 161, 194, 0.2);
 }
 
 #opciones option {
     font-family: 'roboto', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     background: #d5ecf7;
 }
 
@@ -271,7 +283,21 @@ Componentes
     gap: 0.6rem;
     font-family: 'roboto', sans-serif;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+input[type="radio"]+label {
+    cursor: pointer;
+    margin-left: 0.3rem;
+    font-size: 0.95rem;
 }
 
 /* ===============================================================================
@@ -281,23 +307,164 @@ Media querys
 /* Estilos base (móvil pequeño) - 320px a 480px */
 @media (max-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         letter-spacing: -0.02em;
+        padding: 0.5rem 0.25rem;
     }
 
     main {
-        padding: 1rem;
-        height: 350px;
+        padding: 0.75rem;
+        min-height: auto;
+        gap: 0;
     }
 
     .contenedor-colores {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1rem;
-        width: 95%;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    #marco-tarjeta {
+        height: 120px;
+        width: 90%;
+    }
+
+    #tarjeta {
+        height: 70%;
+    }
+
+    .contenedor-botones {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    .boton-generar-paleta {
+        width: 100%;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .contenedor-opciones {
+        flex-direction: column;
+        gap: 0.4rem;
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    #opciones {
+        width: 100%;
+        max-width: none;
+        font-size: 0.85rem;
+        padding: 0.4rem;
+    }
+
+    .formato-color {
+        font-size: 0.85rem;
+        gap: 0.4rem;
+    }
+
+    input[type="radio"] {
+        width: 16px;
+        height: 16px;
+    }
+
+    input[type="radio"]+label {
+        font-size: 0.85rem;
+        margin-left: 0.2rem;
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+
+    .label-color {
+        font-size: 0.7rem;
+    }
+
+    legend {
+        font-size: 0.85rem;
+        width: 100%;
+    }
+}
+
+/* Tableta pequeña / Móvil grande - 481px a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 1rem 1.5rem;
+        min-height: auto;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 1.2rem;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    #marco-tarjeta {
+        height: 150px;
+    }
+
+    .contenedor-botones {
+        flex-direction: row;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .boton-generar-paleta {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .contenedor-opciones {
+        font-size: 0.95rem;
+        gap: 0.6rem;
+    }
+
+    #opciones {
+        font-size: 0.9rem;
+        max-width: 140px;
+    }
+
+    .formato-color {
+        font-size: 0.9rem;
+        gap: 0.5rem;
+    }
+
+    .label-color {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tableta mediana - 769px a 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1.5rem 2rem;
+        min-height: 70vh;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 900px;
     }
 
     #marco-tarjeta {
@@ -305,54 +472,8 @@ Media querys
     }
 
     .contenedor-botones {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .boton-generar-paleta {
-        width: 100%;
-        padding: 0.65rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    select,
-    input[type="radio"],
-    label {
-        font-size: 0.85rem;
-        padding: 0.5rem;
-    }
-
-    .label-color {
-        font-size: 0.75rem;
-    }
-}
-
-/* Móvil estándar - 481px a 768px */
-@media (min-width: 481px) and (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    main {
-        padding: 1.5rem 2rem;
-        height: auto;
-        min-height: 450px;
-    }
-
-    .contenedor-colores {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1.5rem;
-        width: 90%;
-    }
-
-    #marco-tarjeta {
-        height: 200px;
-    }
-
-    .contenedor-botones {
-        flex-direction: row;
         gap: 1rem;
-        flex-wrap: wrap;
+        width: 100%;
     }
 
     .boton-generar-paleta {
@@ -360,38 +481,13 @@ Media querys
         font-size: 0.95rem;
     }
 
-    .label-color {
-        font-size: 0.85rem;
-    }
-}
-
-/* Tableta pequeña a mediana - 769px a 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
-    h1 {
-        font-size: 2.2rem;
+    .contenedor-opciones {
+        font-size: 1rem;
     }
 
-    main {
-        padding: 2rem 3rem;
-        min-height: 550px;
-    }
-
-    .contenedor-colores {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 1.75rem;
-        width: 90%;
-    }
-
-    #marco-tarjeta {
-        height: 210px;
-    }
-
-    .contenedor-botones {
-        gap: 1.2rem;
-    }
-
-    .boton-generar-paleta {
-        padding: 0.75rem 2rem;
+    #opciones {
+        font-size: 0.95rem;
+        max-width: 145px;
     }
 
     .label-color {
@@ -399,19 +495,67 @@ Media querys
     }
 }
 
-/* Pantalla grande - 1025px a 1440px */
+/* Laptop / Pantalla grande - 1025px a 1440px */
 @media (min-width: 1025px) and (max-width: 1440px) {
+    h1 {
+        font-size: 2.3rem;
+    }
+
     main {
-        padding: 2rem 4rem;
-        height: auto;
-        min-height: 580px;
+        padding: 2rem 3rem;
+        min-height: 75vh;
     }
 
     .contenedor-colores {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 2rem;
-        width: 85%;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 1.8rem;
+        width: 100%;
         max-width: 1100px;
+    }
+
+    #marco-tarjeta {
+        height: 200px;
+    }
+
+    .contenedor-botones {
+        gap: 1.3rem;
+    }
+
+    .boton-generar-paleta {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+
+    .contenedor-opciones {
+        font-size: 1.05rem;
+    }
+
+    #opciones {
+        font-size: 1rem;
+        max-width: 150px;
+    }
+
+    .label-color {
+        font-size: 1rem;
+    }
+}
+
+/* Computadora / Pantalla extra grande - 1441px+ */
+@media (min-width: 1441px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    main {
+        padding: 2.5rem 4rem;
+        min-height: 80vh;
+    }
+
+    .contenedor-colores {
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 2.2rem;
+        width: 100%;
+        max-width: 1300px;
     }
 
     #marco-tarjeta {
@@ -422,32 +566,18 @@ Media querys
         gap: 1.5rem;
     }
 
-    .label-color {
-        font-size: 1rem;
-    }
-}
-
-/* Pantalla extra grande - 1441px+ */
-@media (min-width: 1441px) {
-    main {
-        padding: 2rem 5rem;
-        min-height: 620px;
-    }
-
-    .contenedor-colores {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2.5rem;
-        width: 90%;
-        max-width: 1300px;
-    }
-
-    #marco-tarjeta {
-        height: 240px;
-    }
-
     .boton-generar-paleta {
-        padding: 0.85rem 2.5rem;
+        padding: 0.8rem 2.3rem;
         font-size: 1.05rem;
+    }
+
+    .contenedor-opciones {
+        font-size: 1.1rem;
+    }
+
+    #opciones {
+        font-size: 1.05rem;
+        max-width: 160px;
     }
 
     .label-color {
